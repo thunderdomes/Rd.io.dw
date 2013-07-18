@@ -12,6 +12,8 @@
 @interface netraViewController : UIViewController
 {
 	UIButton   *button;
+	UIButton   *twitter;
+	UIButton   *facebook;
 	UIView     *volumeSlider;
 	UILabel *title;
 	NSString            *currentImageName;
@@ -20,6 +22,7 @@
     AVPlayerItem        *theItem;
     AVAudioPlayer       *theAudio;
     NSURL               *url;
+	UIImageView *artwork;
 }
 - (void)showInfo:(id)sender;
 - (void)playPause:(id)sender;

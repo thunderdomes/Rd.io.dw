@@ -22,22 +22,63 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-		self.view.backgroundColor= [UIColor whiteColor];
+		self.view.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"background-today"]];
         // Custom initialization
 		self.title=@"Radio Dawah";
 		button=[UIButton buttonWithType:UIButtonTypeCustom];
 		button.frame=CGRectMake(110, self.view.frame.size.height-165, 100, 100);
 		button.backgroundColor=[UIColor clearColor];
 		[button addTarget:self action:@selector(playPause:) forControlEvents:UIControlEventTouchUpInside];
+		
+		artwork=[[UIImageView alloc]init];
+		artwork.layer.borderWidth=1;
+		artwork.layer.borderColor=[UIColor colorWithRed:0.439 green:0.439 blue:0.439 alpha:1].CGColor;
+		[artwork setImage:[UIImage imageNamed:@"artwork"]];
+		artwork.layer.shadowColor = [UIColor whiteColor].CGColor;
+		artwork.layer.shadowOpacity = 0.7f;
+		artwork.layer.shadowOffset = CGSizeMake(10.0f, 10.0f);
+		artwork.layer.shadowRadius = 5.0f;
+		artwork.layer.masksToBounds = NO;
+		
+		UIBezierPath *path = [UIBezierPath bezierPathWithRect:artwork.bounds];
+		artwork.layer.shadowPath = path.CGPath;
+		
+		
+		if(IS_IPHONE_5)
+		{
+			artwork.frame=CGRectMake(20, 80, 280, 280);
+		}
+		else
+		{
+			// iphone 4 frame
+			artwork.frame=CGRectMake(50, 80, 210, 210);
+			
+		}
+		[self.view addSubview:artwork];
+		
+		
+		
+		
+		
+		twitter=[UIButton buttonWithType:UIButtonTypeCustom];
+		twitter.frame=CGRectMake(210, self.view.frame.size.height-155, 80, 80);
+		[twitter setBackgroundImage:[UIImage imageNamed:@"twitter"] forState:UIControlStateNormal];
+		
+		facebook=[UIButton buttonWithType:UIButtonTypeCustom];
+		facebook.frame=CGRectMake(30, self.view.frame.size.height-155, 80, 80);
+		[facebook setBackgroundImage:[UIImage imageNamed:@"favebook"] forState:UIControlStateNormal];
+		
 		//[button setBackgroundImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
 		title=[[UILabel alloc]initWithFrame:CGRectMake(0, 30, 320, 40)];
 		title.text=@"Radio Dawah";
 		title.font=[UIFont fontWithName:@"HelveticaNeue" size:24];
-		title.textColor=[UIColor colorWithRed:0.616 green:0.616 blue:0.616 alpha:1];
+		title.textColor=[UIColor whiteColor];
 		title.textAlignment=NSTextAlignmentCenter;
 		title.backgroundColor=[UIColor clearColor];
 		
 		[self.view addSubview:button];
+		[self.view addSubview:twitter];
+		[self.view addSubview:facebook];
 		[self.view addSubview:title];
 		[self setButtonImageNamed:@"playbutton.png"];
 		_playing = NO;
