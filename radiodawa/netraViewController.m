@@ -26,7 +26,7 @@
         // Custom initialization
 		self.title=@"Radio Dawah";
 		button=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-		button.frame=CGRectMake(35, 100, 100, 100);
+		button.frame=CGRectMake(110, self.view.frame.size.height-165, 100, 100);
 		button.backgroundColor=[UIColor clearColor];
 		[button addTarget:self action:@selector(playPause:) forControlEvents:UIControlEventTouchUpInside];
 		[button setBackgroundImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
@@ -41,10 +41,20 @@
 		[self.view addSubview:title];
 		//[self setButtonImageNamed:@"playbutton.png"];
 		_playing = NO;
-		volumeSlider=[[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-44, 320, 44)];
-		volumeSlider.backgroundColor=[UIColor redColor];
-		MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(40, 13, 240, 20)];
-		
+		volumeSlider=[[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-55, 320, 55)];
+		volumeSlider.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"volume"]];
+		MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(43, 16, 230, 25)];
+		UIView *a=[[UIView alloc] init];
+		for (UIView *view in [volumeView subviews]) {
+			if ([[[view class] description] isEqualToString:@"MPVolumeSlider"]) {
+				a=view;
+				[(UISlider *)a setThumbImage:[UIImage imageNamed:@"thumb"] forState:UIControlStateNormal];
+				[(UISlider *)a setBackgroundColor:[UIColor clearColor]];
+				[(UISlider *)a setMinimumTrackImage:[[UIImage imageNamed:@"slider"]stretchableImageWithLeftCapWidth: 8 topCapHeight: 0]  forState:UIControlStateNormal];
+				[(UISlider *)a setMaximumTrackImage:[UIImage imageNamed:@"slider_"] forState:UIControlStateNormal];
+			}
+			
+		}
 		[volumeSlider addSubview:volumeView];
 		
 
