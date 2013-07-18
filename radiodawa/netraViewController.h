@@ -13,6 +13,7 @@
 {
 	UIButton   *button;
 	UIView     *volumeSlider;
+	UILabel *title;
 	NSString            *currentImageName;
     Boolean             _playing;
     
