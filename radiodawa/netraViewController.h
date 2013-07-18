@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class AVAudioPlayer;
+@class AVPlayerItem;
 @interface netraViewController : UIViewController
+{
+	UIButton   *button;
+	UIView     *volumeSlider;
+	NSString            *currentImageName;
+    Boolean             _playing;
+    
+    AVPlayerItem        *theItem;
+    AVAudioPlayer       *theAudio;
+    NSURL               *url;
+}
+- (void)showInfo:(id)sender;
+- (void)playPause:(id)sender;
 
+@property (nonatomic, retain) AVAudioPlayer	*theAudio;
+@property (nonatomic, retain) AVPlayerItem	*theItem;
+@property (nonatomic, retain) NSURL         *url;
 @end

@@ -14,8 +14,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+	netraViewController *roots=[[netraViewController alloc]init];
+	UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:roots];
     self.window.backgroundColor = [UIColor whiteColor];
-	self.window.rootViewController=[[netraViewController alloc]init];
+	self.window.rootViewController=nav;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -22,12 +22,16 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-		self.view.backgroundColor=[UIColor redColor];
+		self.view.backgroundColor=[UIColor whiteColor];
         // Custom initialization
+		self.title=@"Radio Dawah";
     }
     return self;
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+	[self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
