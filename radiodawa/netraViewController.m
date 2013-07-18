@@ -22,7 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-		self.view.backgroundColor=[UIColor colorWithRed:0.937 green:0.937 blue:0.937 alpha:1];
+		self.view.backgroundColor= [UIColor colorWithRed:0.961 green:0.965 blue:0.98 alpha:1];
         // Custom initialization
 		self.title=@"Radio Dawah";
 		button=[UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -30,7 +30,8 @@
 		[button addTarget:self action:@selector(playPause:) forControlEvents:UIControlEventTouchUpInside];
 		title=[[UILabel alloc]initWithFrame:CGRectMake(0, 30, 320, 40)];
 		title.text=@"Radio Dawah";
-		title.font=[UIFont fontWithName:@"HelveticaNeue-Bold" size:20];
+		title.font=[UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:20];
+		title.textColor=[UIColor whiteColor];
 		title.textAlignment=NSTextAlignmentCenter;
 		title.backgroundColor=[UIColor clearColor];
 		
