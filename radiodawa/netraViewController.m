@@ -25,21 +25,21 @@
 		self.view.backgroundColor= [UIColor whiteColor];
         // Custom initialization
 		self.title=@"Radio Dawah";
-		button=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+		button=[UIButton buttonWithType:UIButtonTypeCustom];
 		button.frame=CGRectMake(110, self.view.frame.size.height-165, 100, 100);
 		button.backgroundColor=[UIColor clearColor];
 		[button addTarget:self action:@selector(playPause:) forControlEvents:UIControlEventTouchUpInside];
-		[button setBackgroundImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
+		//[button setBackgroundImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
 		title=[[UILabel alloc]initWithFrame:CGRectMake(0, 30, 320, 40)];
 		title.text=@"Radio Dawah";
-		title.font=[UIFont fontWithName:@"AvenirNext-DemiBold" size:24];
-		title.textColor=[UIColor blackColor];
+		title.font=[UIFont fontWithName:@"HelveticaNeue" size:24];
+		title.textColor=[UIColor colorWithRed:0.616 green:0.616 blue:0.616 alpha:1];
 		title.textAlignment=NSTextAlignmentCenter;
 		title.backgroundColor=[UIColor clearColor];
 		
 		[self.view addSubview:button];
 		[self.view addSubview:title];
-		//[self setButtonImageNamed:@"playbutton.png"];
+		[self setButtonImageNamed:@"playbutton.png"];
 		_playing = NO;
 		volumeSlider=[[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-55, 320, 55)];
 		volumeSlider.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"volume"]];
@@ -147,13 +147,14 @@
 		if(theAudio) {
             [theAudio play];
             _playing = YES;
-			//[self spinButton];
-           //[self setButtonImageNamed:@"stopbutton.png"];
+			[self spinButton];
+           [self setButtonImageNamed:@"stopbutton.png"];
         } else {
             url = [[NSURL alloc] initWithString:@"http://198.105.220.12:9746/;stream.mp3&13740436417&duration=99999"];
             theItem = [AVPlayerItem playerItemWithURL:url];
             [theItem addObserver:self forKeyPath:@"status" options:0 context:nil];
             theAudio = [AVPlayer playerWithPlayerItem:theItem];
+			[self setButtonImageNamed:@"loadingbutton.png"];
         }
 	}
 	else
