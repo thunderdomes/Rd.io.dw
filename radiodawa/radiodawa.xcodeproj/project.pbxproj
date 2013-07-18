@@ -26,6 +26,10 @@
 		D0875B90179723870092EA80 /* netraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0875B8F179723870092EA80 /* netraViewController.m */; };
 		D0875B92179723F10092EA80 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0875B91179723F10092EA80 /* AudioToolbox.framework */; };
 		D0875B94179723FA0092EA80 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0875B93179723FA0092EA80 /* QuartzCore.framework */; };
+		D0CA1F7D1797D990006114AF /* loadingbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA1F791797D990006114AF /* loadingbutton.png */; };
+		D0CA1F7E1797D990006114AF /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA1F7A1797D990006114AF /* pausebutton.png */; };
+		D0CA1F7F1797D990006114AF /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA1F7B1797D990006114AF /* playbutton.png */; };
+		D0CA1F801797D990006114AF /* stopbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA1F7C1797D990006114AF /* stopbutton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		D0875B8F179723870092EA80 /* netraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = netraViewController.m; sourceTree = "<group>"; };
 		D0875B91179723F10092EA80 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D0875B93179723FA0092EA80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D0CA1F791797D990006114AF /* loadingbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingbutton.png; sourceTree = "<group>"; };
+		D0CA1F7A1797D990006114AF /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausebutton.png; sourceTree = "<group>"; };
+		D0CA1F7B1797D990006114AF /* playbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playbutton.png; sourceTree = "<group>"; };
+		D0CA1F7C1797D990006114AF /* stopbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopbutton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,7 @@
 		D0875B5B179703CC0092EA80 /* radiodawa */ = {
 			isa = PBXGroup;
 			children = (
+				D0CA1F781797D969006114AF /* image */,
 				D0875B64179703CC0092EA80 /* netraAppDelegate.h */,
 				D0875B65179703CC0092EA80 /* netraAppDelegate.m */,
 				D0875B5C179703CC0092EA80 /* Supporting Files */,
@@ -171,6 +180,17 @@
 				D0875B7C179703CD0092EA80 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0CA1F781797D969006114AF /* image */ = {
+			isa = PBXGroup;
+			children = (
+				D0CA1F791797D990006114AF /* loadingbutton.png */,
+				D0CA1F7A1797D990006114AF /* pausebutton.png */,
+				D0CA1F7B1797D990006114AF /* playbutton.png */,
+				D0CA1F7C1797D990006114AF /* stopbutton.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +269,10 @@
 				D0875B68179703CC0092EA80 /* Default.png in Resources */,
 				D0875B6A179703CC0092EA80 /* Default@2x.png in Resources */,
 				D0875B6C179703CC0092EA80 /* Default-568h@2x.png in Resources */,
+				D0CA1F7D1797D990006114AF /* loadingbutton.png in Resources */,
+				D0CA1F7E1797D990006114AF /* pausebutton.png in Resources */,
+				D0CA1F7F1797D990006114AF /* playbutton.png in Resources */,
+				D0CA1F801797D990006114AF /* stopbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
