@@ -12,6 +12,7 @@
 #import <QuartzCore/CoreAnimation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <CFNetwork/CFNetwork.h>
+#import <Social/Social.h>
 @interface netraViewController ()
 
 @end
@@ -63,9 +64,10 @@
 		twitter=[UIButton buttonWithType:UIButtonTypeCustom];
 		twitter.frame=CGRectMake(210, self.view.frame.size.height-155, 80, 80);
 		[twitter setBackgroundImage:[UIImage imageNamed:@"twitter"] forState:UIControlStateNormal];
-		
+		[twitter addTarget:self action:@selector(twitterShare) forControlEvents:UIControlEventTouchUpInside];
 		facebook=[UIButton buttonWithType:UIButtonTypeCustom];
 		facebook.frame=CGRectMake(30, self.view.frame.size.height-155, 80, 80);
+		[facebook addTarget:self action:@selector(facebookShare) forControlEvents:UIControlEventTouchUpInside];
 		[facebook setBackgroundImage:[UIImage imageNamed:@"favebook"] forState:UIControlStateNormal];
 		
 		//[button setBackgroundImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
@@ -123,7 +125,7 @@
 	[button.layer removeAllAnimations];
 	[button setImage:image forState:0];
     
-	if ([imageName isEqual:@"loadingbutton.png"]) {
+	if ([imageName isEqual:@"loading"]) {
 		[self spinButton];
 	}
 }
@@ -168,7 +170,26 @@
     }
     [super finalize];
 }
+-(void)twitterShare{
+	if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:@"Now Listening @RadioDawah via radio dawah for iphone"];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+else{
+}
+}
+-(void)facebookShare{
+	if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+		SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [controller setInitialText:@"Now Listening @RadioDawah via radio dawah for iphone"];
+        [self presentViewController:controller animated:YES completion:Nil];
+    }
 
+}
 -(void)viewWillAppear:(BOOL)animated{
 	[self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
@@ -195,7 +216,7 @@
             theItem = [AVPlayerItem playerItemWithURL:url];
             [theItem addObserver:self forKeyPath:@"status" options:0 context:nil];
             theAudio = [AVPlayer playerWithPlayerItem:theItem];
-			[self setButtonImageNamed:@"loadingbutton.png"];
+			[self setButtonImageNamed:@"loading"];
         }
 	}
 	else
