@@ -13,6 +13,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <CFNetwork/CFNetwork.h>
 #import <Social/Social.h>
+#import "Flurry.h"
 @interface netraViewController ()
 
 @end
@@ -204,24 +205,31 @@ else{
 	
 }
 - (void)playPause:(id)sender{
+	
 	if (!_playing)
 	{
 		if(theAudio) {
             [theAudio play];
             _playing = YES;
+			NSLog(@"1");
 			[self spinButton];
            [self setButtonImageNamed:@"stopbutton.png"];
+			[Flurry logEvent:@"Play" timed:YES];
         } else {
             url = [[NSURL alloc] initWithString:@"http://198.105.220.12:9746/;stream.mp3&13740436417&duration=99999"];
             theItem = [AVPlayerItem playerItemWithURL:url];
             [theItem addObserver:self forKeyPath:@"status" options:0 context:nil];
             theAudio = [AVPlayer playerWithPlayerItem:theItem];
 			[self setButtonImageNamed:@"loading"];
+			[Flurry logEvent:@"Begin Stream" timed:YES];
+			NSLog(@"2");
         }
 	}
 	else
 	{
         [theAudio pause];
+		NSLog(@"3");
+		[Flurry logEvent:@"Pause" timed:YES];
 		_playing = NO;
         [self setButtonImageNamed:@"playbutton.png"];
 	}
@@ -233,14 +241,17 @@ else{
     if (object == theItem && [keyPath isEqualToString:@"status"]) {
         if(theItem.status == AVPlayerStatusReadyToPlay) {
             [theAudio play];
+			NSLog(@"4");
             _playing = YES;
+			[Flurry logEvent:@"Ready To play" timed:YES];
             [self setButtonImageNamed:@"stopbutton.png"];
             [theItem removeObserver:self forKeyPath:@"status"];
 			
         }
         else if(theItem.status == AVPlayerStatusFailed) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"radiomobile" message:theItem.error.description delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Radio Dawah" message:@"Opps Error with stremaing" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
+			NSLog(@"5");
 			[self setButtonImageNamed:@"playbutton.png"];
             _playing = NO;
         }

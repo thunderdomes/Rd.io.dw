@@ -13,6 +13,9 @@
 		D07B2EC1179C3E0C0042CE86 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D07B2EC0179C3E0C0042CE86 /* Default.png */; };
 		D07B2EC3179C3ECC0042CE86 /* FF_ICON_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = D07B2EC2179C3ECC0042CE86 /* FF_ICON_114x114.png */; };
 		D07B2EC5179C3EE90042CE86 /* s.png in Resources */ = {isa = PBXBuildFile; fileRef = D07B2EC4179C3EE90042CE86 /* s.png */; };
+		D07B2EE4179D040E0042CE86 /* libFlurry_4.2.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D07B2EE3179D040E0042CE86 /* libFlurry_4.2.2.a */; };
+		D07B2EE5179D040E0042CE86 /* libFlurry_4.2.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D07B2EE3179D040E0042CE86 /* libFlurry_4.2.2.a */; };
+		D07B2EE7179D045F0042CE86 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07B2EE6179D045F0042CE86 /* SystemConfiguration.framework */; };
 		D0875B56179703CC0092EA80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0875B55179703CC0092EA80 /* UIKit.framework */; };
 		D0875B58179703CC0092EA80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0875B57179703CC0092EA80 /* Foundation.framework */; };
 		D0875B5A179703CC0092EA80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0875B59179703CC0092EA80 /* CoreGraphics.framework */; };
@@ -63,6 +66,9 @@
 		D07B2EC0179C3E0C0042CE86 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D07B2EC2179C3ECC0042CE86 /* FF_ICON_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FF_ICON_114x114.png; sourceTree = "<group>"; };
 		D07B2EC4179C3EE90042CE86 /* s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s.png; sourceTree = "<group>"; };
+		D07B2EE2179D040E0042CE86 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		D07B2EE3179D040E0042CE86 /* libFlurry_4.2.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.2.a; sourceTree = "<group>"; };
+		D07B2EE6179D045F0042CE86 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D0875B52179703CC0092EA80 /* radiodawa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = radiodawa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0875B55179703CC0092EA80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D0875B57179703CC0092EA80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -107,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07B2EE7179D045F0042CE86 /* SystemConfiguration.framework in Frameworks */,
 				D0CA1F9617983EE0006114AF /* Social.framework in Frameworks */,
 				D0875B94179723FA0092EA80 /* QuartzCore.framework in Frameworks */,
 				D0875B92179723F10092EA80 /* AudioToolbox.framework in Frameworks */,
@@ -115,6 +122,7 @@
 				D0875B56179703CC0092EA80 /* UIKit.framework in Frameworks */,
 				D0875B58179703CC0092EA80 /* Foundation.framework in Frameworks */,
 				D0875B5A179703CC0092EA80 /* CoreGraphics.framework in Frameworks */,
+				D07B2EE4179D040E0042CE86 /* libFlurry_4.2.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +133,7 @@
 				D0875B74179703CD0092EA80 /* SenTestingKit.framework in Frameworks */,
 				D0875B75179703CD0092EA80 /* UIKit.framework in Frameworks */,
 				D0875B76179703CD0092EA80 /* Foundation.framework in Frameworks */,
+				D07B2EE5179D040E0042CE86 /* libFlurry_4.2.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,11 +143,14 @@
 		D0875B49179703CC0092EA80 = {
 			isa = PBXGroup;
 			children = (
+				D07B2EE6179D045F0042CE86 /* SystemConfiguration.framework */,
 				D07B2EC4179C3EE90042CE86 /* s.png */,
 				D07B2EC2179C3ECC0042CE86 /* FF_ICON_114x114.png */,
 				D07B2EC0179C3E0C0042CE86 /* Default.png */,
 				D07B2EBE179C3DFD0042CE86 /* Default@2x.png */,
 				D07B2EBC179C3DD00042CE86 /* Default-568h@2x.png */,
+				D07B2EE2179D040E0042CE86 /* Flurry.h */,
+				D07B2EE3179D040E0042CE86 /* libFlurry_4.2.2.a */,
 				D07B2EBA179C3CA70042CE86 /* Default-568h@2x.png */,
 				D0CA1F9517983EE0006114AF /* Social.framework */,
 				D0875B93179723FA0092EA80 /* QuartzCore.framework */,
@@ -469,6 +481,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "radiodawa/radiodawa-Prefix.pch";
 				INFOPLIST_FILE = "radiodawa/radiodawa-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -480,6 +496,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "radiodawa/radiodawa-Prefix.pch";
 				INFOPLIST_FILE = "radiodawa/radiodawa-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -496,6 +516,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "radiodawa/radiodawa-Prefix.pch";
 				INFOPLIST_FILE = "radiodawaTests/radiodawaTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -513,6 +537,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "radiodawa/radiodawa-Prefix.pch";
 				INFOPLIST_FILE = "radiodawaTests/radiodawaTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
