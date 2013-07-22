@@ -24,9 +24,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-		self.view.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"background-today"]];
+		
         // Custom initialization
-		self.title=@"Radio Dawah";
+		self.title=@"Radio Nahdatul Ulama";
 		button=[UIButton buttonWithType:UIButtonTypeCustom];
 		button.frame=CGRectMake(110, self.view.frame.size.height-165, 100, 100);
 		button.backgroundColor=[UIColor clearColor];
@@ -49,14 +49,16 @@
 		if(IS_IPHONE_5)
 		{
 			artwork.frame=CGRectMake(20, 80, 280, 280);
+			self.view.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"default-568"]];
 		}
 		else
 		{
 			// iphone 4 frame
+			self.view.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"default"]];
 			artwork.frame=CGRectMake(50, 80, 210, 210);
 			
 		}
-		[self.view addSubview:artwork];
+		//[self.view addSubview:artwork];
 		
 		
 		
@@ -73,7 +75,7 @@
 		
 		//[button setBackgroundImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
 		title=[[UILabel alloc]initWithFrame:CGRectMake(0, 30, 320, 40)];
-		title.text=@"Radio Dawah";
+		title.text=@"Nahdlatul Ulama";
 		title.font=[UIFont fontWithName:@"HelveticaNeue" size:24];
 		title.textColor=[UIColor whiteColor];
 		title.textAlignment=NSTextAlignmentCenter;
@@ -214,7 +216,7 @@ else{
 			[self spinButton];
            [self setButtonImageNamed:@"stopbutton.png"];
         } else {
-            url = [[NSURL alloc] initWithString:@"http://198.105.220.12:9746/;stream.mp3&13740436417&duration=99999"];
+            url = [[NSURL alloc] initWithString:@"http://27.131.0.60:8001/;stream.nsv&type=mp3"];
             theItem = [AVPlayerItem playerItemWithURL:url];
             [theItem addObserver:self forKeyPath:@"status" options:0 context:nil];
             theAudio = [AVPlayer playerWithPlayerItem:theItem];
